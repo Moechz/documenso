@@ -1,0 +1,65 @@
+# ===========================================================================
+# Documenso for TerraMaster TOS 7 (multi-container Docker application)
+# ===========================================================================
+# App image : moechz/documenso:v2.22.0 (Docker Hub mirror of the upstream
+#             ghcr.io/documenso/documenso image, pushed by the maintainer)
+# Database  : postgres:16-alpine (internal only)
+#
+# Only the app publishes a host port; NEXTAUTH_SECRET is generated on first
+# start by the wrapper and stored on the persistent data volume.
+
+services:
+  documensodocker:
+    image: moechz/documenso:v2.22.0
+    container_name: documensodocker
+    restart: unless-stopped
+    user: "1000:1000"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        @@ENTRYPOINT_SH@@
+    depends_on:
+      documensodocker-db:
+        condition: service_healthy
+    ports:
+      - "8155:3000"
+    environment:
+      TZ: "Asia/Shanghai"
+      NEXT_PUBLIC_WEBAPP_URL: "http://localhost:8155"
+      NEXT_PRIVATE_DATABASE_URL: "postgresql://documenso@documensodocker-db:5432/documenso"
+      NEXT_PRIVATE_DIRECT_DATABASE_URL: "postgresql://documenso@documensodocker-db:5432/documenso"
+      NEXT_PUBLIC_UPLOAD_TRANSPORT: "database"
+    volumes:
+      - /Volume1/DockerAppData/documensodocker/data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+
+  documensodocker-db:
+    image: postgres:16-alpine
+    container_name: documensodocker-db
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      TZ: "Asia/Shanghai"
+      POSTGRES_USER: "documenso"
+      POSTGRES_DB: "documenso"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - /Volume1/DockerAppData/documensodocker/db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U documenso -d documenso"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+# TOS App Center web metadata (must be the last block of the file):
+x-app-meta:
+  web:
+    port: 8155
+    protocol: http
