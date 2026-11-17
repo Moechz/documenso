@@ -10,7 +10,7 @@
 
 services:
   documensodocker:
-    image: moechz/documenso:v2.22.0
+    image: documenso/documenso:v2.22.0
     container_name: documensodocker
     restart: unless-stopped
     user: "1000:1000"
@@ -25,18 +25,22 @@ services:
       - "8155:3000"
     environment:
       TZ: "Asia/Shanghai"
+      # The TOS installer does not substitute placeholders inside compose files, so the
+      # URL cannot be templated here; relative redirects keep the UI reachable from
+      # any LAN address. Change it to your NAS URL if you rely on email links.
       NEXT_PUBLIC_WEBAPP_URL: "http://localhost:8155"
       NEXT_PRIVATE_DATABASE_URL: "postgresql://documenso@documensodocker-db:5432/documenso"
       NEXT_PRIVATE_DIRECT_DATABASE_URL: "postgresql://documenso@documensodocker-db:5432/documenso"
       NEXT_PUBLIC_UPLOAD_TRANSPORT: "database"
+      DOCUMENSO_DISABLE_TELEMETRY: "true"
     volumes:
       - /Volume1/DockerAppData/documensodocker/data:/data
     healthcheck:
       test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/ || exit 1"]
       interval: 30s
       timeout: 10s
-      retries: 5
-      start_period: 90s
+      retries: 10
+      start_period: 180s
 
   documensodocker-db:
     image: postgres:16-alpine

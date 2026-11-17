@@ -13,9 +13,9 @@
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [zh-cn]
 name         = "Documenso"
@@ -37,159 +37,159 @@ important    = "首次使用請開啟網頁完成初始化。資料保存在 Doc
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [de-de]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [it-it]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [es-es]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [hu-hu]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [ja-jp]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [ko-kr]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [pl-pl]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [ru-ru]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [tr-tr]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [pt-pt]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [ar-sa]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [cs-cz]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [he-il]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [id-id]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [nb-no]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [nl-nl]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [sv-se]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [th-th]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
 [vi-vn]
 name         = "Documenso"
 auth         = "Documenso"
 version      = "@@VERSION@@"
-descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the upstream image (mirrored to Docker Hub by the maintainer) with its own PostgreSQL database as non-root containers. Only the x86_64 package is built because the mirrored image is amd64."
+descript     = "Documenso is a self-hosted document signing platform: upload a PDF, add fields, send it for signature and keep an audit trail, an open alternative to DocuSign. This package runs the official Docker Hub image (documenso/documenso) with its own PostgreSQL database; both containers run as non-root users. Only the x86_64 package is built for now."
 release_note = "1. First release."
-important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret is generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
+important    = "Open the web UI on port 8155 and sign up for the first account (the first user becomes admin), then create a document and send it. The stack contains two containers (app, PostgreSQL); the NextAuth secret and a self-signed signing certificate are generated on first start. Data lives under /Volume1/DockerAppData/documensodocker/. Sending real emails needs SMTP settings, otherwise use the in-app links. Back up the data folder before uninstalling with data removal. Plain HTTP on the LAN."
 
