@@ -11,13 +11,14 @@ Documenso on TOS 7 through the App Center:
 - `config.ini` — TOS application metadata (`application_type: docker`, id `documensodocker`)
 - `documensodocker.lang` — 23-language superset (TOS requires 14)
 - `documensodocker.svg` — application icon (274 bytes, 2 SVG elements)
-- `docker-compose.yml` — one service, image `moechz/documenso:v2.22.0`
+- `docker-compose.yml` — two services (Documenso + PostgreSQL), image
+  `documenso/documenso:v2.22.0`
 
 ## How it works
 
 | | |
 |---|---|
-| Container image | `moechz/documenso:v2.22.0` (Docker Hub, used unmodified) |
+| Container image | `documenso/documenso:v2.22.0` (Docker Hub, the official upstream image, used unmodified; amd64) |
 | Open | `http://<NAS-IP>:8155/` (container port 3000) |
 | Runs as | non-root, `user: "1000:1000"` |
 | Persistent data | `/data` → `/Volume1/DockerAppData/documensodocker/data`, `/var/lib/postgresql/data` → `/Volume1/DockerAppData/documensodocker/db` |
@@ -76,7 +77,8 @@ TerraMaster. Full details: [NOTICE.md](NOTICE.md).
 - **Non-root.** `user: "1000:1000"`; verified on real hardware (the container reports uid 1000).
 - **Entrypoint wrapper**: the upstream image is built to run as root and keeps state in root-owned paths, so the compose file replaces the entrypoint with `src/entrypoint.sh`, which makes the service run as an unprivileged user. See that file for the details.
 - **Fixed image tag, never `:latest`**, Docker Hub only, no `privileged`, no `network_mode: host`, and no Docker socket, no `cap_add`.
-- **Health check** probing the service on container port 3000.
+- **Health check** on `/api/health`, which reports the database and the signing certificate, so a
+  half-migrated instance is never marked healthy (180 s start period for the first migration).
 - **Deterministic build**: GNU tar with uid/gid 0 and zeroed timestamps, gzip without a timestamp, plus the review-standards self-check above.
 
 ## Runtime file manifest
@@ -87,15 +89,16 @@ table lists what is created and how it behaves. Nothing else is written.
 
 | Path | Purpose | Created when | Growth bound | Lifecycle |
 |---|---|---|---|---|
-| `/Volume1/DockerAppData/documensodocker/data` | Documenso application data (everything the container writes outside /tmp) | on first start / on demand | bounded by your own data | persistent; kept on uninstall unless you ask to delete it |
-| `/Volume1/DockerAppData/documensodocker/db` | Documenso application data (everything the container writes outside /tmp) | on first start / on demand | bounded by your own data | persistent; kept on uninstall unless you ask to delete it |
+| `/Volume1/DockerAppData/documensodocker/data` | `nextauth_secret`, `encryption_key`, `encryption_key_secondary`, `signing.p12`, `signing_pass` and the application's own uploads — mode 0600 | on first start | bounded by your own data | persistent; kept on uninstall unless you ask to delete it |
+| `/Volume1/DockerAppData/documensodocker/db` | PostgreSQL 16 cluster (`PGDATA=/var/lib/postgresql/data/pgdata`): users, documents, audit trail | on first start | bounded by your own data | persistent; kept on uninstall unless you ask to delete it |
 
 ## Build
 
 ```bash
 scripts/build.sh                  # -> out/documensodocker.tar.gz + .sha256
 scripts/build.sh 2.22.0-2   # packaging iteration bump
-scripts/build.sh 2.22.0-1 aarch64
+scripts/build.sh 2.22.0-3          # current iteration
+scripts/build.sh 2.22.0-3 x86_64   # explicit platform (the upstream image is amd64 only)
 ```
 
 The build stages the four files, substitutes the version/platform placeholders,
@@ -121,12 +124,11 @@ bash test/install-and-verify.sh                  # on-device E2E (needs root)
 ## Store submission checklist
 
 1. Public GitHub repo (code + README only).
-2. Release **tag `v2.22.0-1`**, assets `documensodocker.tar.gz` +
-   `documensodocker.tar.gz.sha256` (Docker asset naming: `<app_id>.tar.gz`, **no
-   platform suffix**).
+2. Release **tag `v2.22.0-3`**, assets `documensodocker_x86_64.tar.gz` +
+   `documensodocker_x86_64.tar.gz.sha256` (Docker asset naming: `<app_id>_<arch>.tar.gz`).
 3. Developer platform → Add Application: ID `documensodocker`, package type Docker,
    repository URL, architecture `x86_64`.
-4. Version Management → Add Version `2.22.0-1` → automated validation → review.
+4. Version Management → Add Version `2.22.0-3` → automated validation → review.
 
 
 ## Limitations

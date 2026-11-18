@@ -1,9 +1,11 @@
 # Privacy Policy — Documenso for TerraMaster TOS (`documensodocker`)
 
-**Last updated:** 17 November 2026
+**Last updated:** 18 November 2026
 **Data controller / contact:** Moechz — moechz@163.com
 
 This policy covers the TOS application `documensodocker` (the “app”) and its packaging.
+The App Center “Help” link of the application points at this policy
+(<https://www.moechz.com/privacy.html>).
 
 ## 1. Summary
 
@@ -20,9 +22,11 @@ This policy covers the TOS application `documensodocker` (the “app”) and its
 | `/data` | `/Volume1/DockerAppData/documensodocker/data` |
 | `/var/lib/postgresql/data` | `/Volume1/DockerAppData/documensodocker/db` |
 
-`data/` holds the NextAuth secret (`nextauth_secret`), the generated signing certificate
-(`signing.p12`, PKCS#12) and its passphrase (`signing_pass`); `db/` holds the PostgreSQL
-cluster with documents, users and the audit trail. It stays in the application data folder
+`data/` holds the NextAuth session secret (`nextauth_secret`), the two data-encryption keys
+(`encryption_key`, `encryption_key_secondary` — Documenso encrypts recipient tokens and
+similar sensitive fields with them), the generated signing certificate (`signing.p12`,
+PKCS#12) and its passphrase (`signing_pass`); all of these files are created `0600` and never
+leave the NAS. `db/` holds the PostgreSQL cluster with documents, users and the audit trail. It stays in the application data folder
 (`/Volume1/DockerAppData/documensodocker/`) or in the media paths you choose; nothing is uploaded to
 the developer.
 

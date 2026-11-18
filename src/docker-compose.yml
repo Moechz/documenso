@@ -1,12 +1,13 @@
 # ===========================================================================
 # Documenso for TerraMaster TOS 7 (multi-container Docker application)
 # ===========================================================================
-# App image : moechz/documenso:v2.22.0 (Docker Hub mirror of the upstream
-#             ghcr.io/documenso/documenso image, pushed by the maintainer)
+# App image : documenso/documenso:v2.22.0 (Docker Hub, the official upstream
+#             image, used unmodified; amd64 only)
 # Database  : postgres:16-alpine (internal only)
 #
-# Only the app publishes a host port; NEXTAUTH_SECRET is generated on first
-# start by the wrapper and stored on the persistent data volume.
+# Only the app publishes a host port. The wrapper generates the NextAuth
+# secret, the data-encryption keys and a self-signed signing certificate on
+# first start and keeps them on the persistent data volume.
 
 services:
   documensodocker:
@@ -36,7 +37,9 @@ services:
     volumes:
       - /Volume1/DockerAppData/documensodocker/data:/data
     healthcheck:
-      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/ || exit 1"]
+      # /api/health reports the database and the signing certificate, so a
+      # half-migrated instance is never marked healthy.
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/api/health || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 10
